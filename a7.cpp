@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Account.h" 
 #include "SavingsAccount.h" 
+#include "CheckingAccount.h"
 
 using namespace std;
 
@@ -15,7 +16,7 @@ int main()
 	
 	Angelina_Account[ 0 ] = new SavingsAccount( 400.0, 0.12 ); 
 
-	Angelina_Account[ 1 ] = new SavingsAccount( 400.0, 1.0);
+	Angelina_Account[ 1 ] = new CheckingAccount( 400.0, 1.0);
 
 	cout << "**************************" << endl;
 
