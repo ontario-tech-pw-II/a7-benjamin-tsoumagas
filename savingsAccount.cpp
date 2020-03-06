@@ -6,12 +6,6 @@ using namespace std;
 SavingsAccount::SavingsAccount( double initialBalance, double rate ) : Account( initialBalance ) 
 {
 	// your code
-	if (initialBalance >= 0.00){
-		Account::setBalance(initialBalance);
-	}
-	else{
-		Account::setBalance(0.00);
-	}
 	
 	if (rate >= 0.00){
 		interestRate = rate;
@@ -23,12 +17,14 @@ SavingsAccount::SavingsAccount( double initialBalance, double rate ) : Account( 
 
 double SavingsAccount::calculateInterest() {
 	// your code
-	double interest = (interestRate * Account::getBalance());
+	return interestRate * Account::getBalance();
 } 
 void SavingsAccount::display(ostream & os) const
 {
 	// your code
-	cout << "Account type: Saving" << endl;
-	cout << "Balance: $" << Account::getBalance() << endl;
-	cout << "Interest Rate (%): " << (interestRate * 100) << ".00" << endl;
+	os.precision(2);
+	os << fixed;
+	os << "Account type: Saving" << endl;
+	os << "Balance: $" << Account::getBalance() << endl;
+	os << "Interest Rate (%): " << (interestRate * 100) << endl;
 }
